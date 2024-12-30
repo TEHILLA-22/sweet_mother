@@ -88,9 +88,9 @@
             }
 
             .slide h3 {
-                width: 80%;
+                width: 60%;
                 position: absolute;
-                transform: translateX(-102%);
+                transform: translateX(-100%);
                 background: rgba(0, 0, 0, 0.5);
                 color: white;
                 background-color: #ff6f61;
@@ -109,12 +109,12 @@
         .slide h3 {
             position: absolute;
             bottom: 400px;
-            left: 250px;
+            left: 300px;
             background: rgba(0, 0, 0, 0.5);
             color: white;
             padding: 10px 20px;
             border-radius: 10px;
-            font-size: 20px;
+            font-size: 16px;
             font-weight: bold;
             margin-bottom: -350px;
         }
@@ -561,36 +561,43 @@
 
 
        // Heartfelt Messages Section - Add New Messages
-const messageForm = document.getElementById("message-form");
-const messageList = document.getElementById("message-list");
-
-// Pre-existing messages
-const messages = [
-    "Happy Birthday to the most amazing mom in the world! ❤️",
-    "You are the light of our lives, Mom! 🎉"
-];
-
-// Display the pre-existing messages
-messages.forEach(message => {
-    const li = document.createElement("li");
-    li.textContent = message;
-    messageList.appendChild(li);
-});
-
-messageForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const newMessage = document.getElementById("new-message").value;
-
-    // Add the new message to the list
-    if (newMessage.trim() !== "") {
-        const li = document.createElement("li");
-        li.textContent = newMessage;
-        messageList.appendChild(li);
-    }
-
-    // Reset the form
-    messageForm.reset();
-});
+       const messageForm = document.getElementById("message-form");
+       const messageList = document.getElementById("message-list");
+       
+       // Load pre-existing messages from localStorage, or initialize with an empty array
+       const messages = JSON.parse(localStorage.getItem("messages")) || [
+           "Happy Birthday to the most amazing mom in the world! ❤️",
+           "You are the light of our lives, Mom! 🎉"
+       ];
+       
+       // Function to display the messages in the list
+       function displayMessages() {
+           messageList.innerHTML = ""; // Clear the list
+           messages.forEach(message => {
+               const li = document.createElement("li");
+               li.textContent = message;
+               messageList.appendChild(li);
+           });
+       }
+       
+       // Display messages on page load
+       displayMessages();
+       
+       // Add new message to the list and store it in localStorage
+       messageForm.addEventListener("submit", (e) => {
+           e.preventDefault();
+           const newMessage = document.getElementById("new-message").value;
+       
+           if (newMessage.trim() !== "") {
+               messages.push(newMessage); // Add the new message to the array
+               localStorage.setItem("messages", JSON.stringify(messages)); // Save the updated list to localStorage
+               displayMessages(); // Re-render the message list
+           }
+       
+           // Reset the form
+           messageForm.reset();
+       });
+       
 
 // Gift Reveal Section - Toggle Visibility
 const giftBox = document.getElementById("gift-box");
