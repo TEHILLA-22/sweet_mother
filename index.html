@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Mom</title>
+<link rel="stylesheet" href="style.css">
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(red, pink, violet, pink, tomato);
+            overflow-x: hidden;
+            color: gold;
+        }
+
+        header {
+            background: #ff6f61;
+            color: purple;
+            text-align: center;
+            font-size: 16px;
+            border-radius: 2px 0 5px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+
+        .slider {
+            position: relative;
+            overflow: hidden;
+            margin: 2px auto;
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 1s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+          
+            flex-direction: column;
+            padding: 10px;
+        }
+        
+        .slide img {
+            width: 80%;
+            height: 600px;
+           
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .slides .slide:nth-child(6) img {
+            width: 70%;
+            object-fit: calc(30%);
+        }
+        .slides .slide:nth-child(7) img {
+            width: 70%;
+            object-fit: contain;
+        }
+
+       
+        @media (max-width:750px) {
+            .slide img {
+                height: 500px;
+                width: 400px;
+            }
+
+            .slides .slide:nth-child(6) img {
+                width: 300px;
+            }
+
+            .slide h3 {
+                width: 80%;
+                position: absolute;
+                transform: translateX(-102%);
+                background: rgba(0, 0, 0, 0.5);
+                color: white;
+                background-color: #ff6f61;
+               margin-bottom: -350px;
+                text-align: center;
+                align-items: center;
+                justify-content: center;     
+                font-weight: bold;
+
+
+            }
+        }
+
+    
+
+        .slide h3 {
+            position: absolute;
+            bottom: 400px;
+            left: 400px;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: -350px;
+        }
+
+        .main-section {
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(purple, tomato, violet);
+
+           
+                max-width: 450px;
+                min-height: 200px;
+                margin: 0 auto;
+                text-align: center;
+                padding: 15px;
+                color: #999;
+                padding-bottom: 60px;
+            
+               
+                background-size: 100%;
+              
+        }
+
+        .main-section img{
+            width: 50%;
+        }
+
+        .main-section h1 {
+            background: url(sname.png);
+     color: black;
+   
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: swing 4s infinite;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    font-size: 35px;
+    padding: 0 10px;
+    font-family: 'SF Espresso Shack', cursive;       
+         }
+
+        .main-section p {
+            font-size: 20px;
+            line-height: 1.8;
+            margin-top: 20px;
+            color: #6d4c41;
+        }
+
+        .marquee {
+            position: fixed;
+            width: 50px;
+            animation: scroll 20s linear infinite;
+        }
+
+        .marquee img {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .marquee-left {
+            left: 10px;
+        }
+
+        .marquee-right {
+            right: 10px;
+        }
+
+        ul {
+            color: #F80980;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-2000px); }
+        }
+
+
+        h2 {
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+            color: #fff;
+            letter-spacing: 2px;
+        }
+        
+        /* Header */
+        header {
+            background: #ff6f61;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        @media(max-width:750px) {
+            .head header {
+                font-size: 2px;
+                background: #ff61a6;
+            }
+        }
+        
+        h1 {
+            font-size: 1.6rem;
+            margin: 0;
+        }
+        
+        .button {
+            background-color: #ff61a6;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .button:hover {
+            background-color: #ff5252;
+            transform: scale(1.05);
+        }
+        
+        input, .button {
+            font-size: 1rem;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        
+        input:focus {
+            outline: none;
+            border: 2px solid #ff61a6;
+        }
+        
+        /* Messages Section */
+        .messages {
+            margin: 20px;
+            padding: 30px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            color: #ff6f61;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+        
+        .message-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .message-list li {
+            font-size: 1.2rem;
+            padding: 10px;
+            background: #ffecf3;
+            margin: 10px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .message-form {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        /* Gift Reveal Section */
+        .gift {
+            margin: 20px;
+            padding: 30px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .gift-box {
+            background: #ff9f9f;
+            padding: 40px;
+            cursor: pointer;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .gift-box p {
+            color: #fff;
+            font-size: 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        .gift-box:hover {
+            transform: scale(1.05);
+        }
+        
+        .gift-reveal img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        
+        .gift-reveal p {
+            font-size: 1.5rem;
+            color: tomato;
+        }
+        
+        /* Fireworks Section */
+        #fireworks-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            header {
+                padding: 20px;
+            }
+        
+            h1 {
+                font-size: 2.5rem;
+            }
+        
+            .button {
+                padding: 10px 20px;
+            }
+        
+            .messages, .gift {
+                margin: 15px;
+                padding: 20px;
+            }
+        
+            .message-form {
+                flex-direction: column;
+                align-items: center;
+            }
+        
+            input, .button {
+                width: 100%;
+            }
+        }
+
+        .gift-reveal img {
+            width: 20%;
+            height: 10%;
+
+        }
+        
+        .m1{position:fixed;left:0.5%; width:auto;height:100%;top:1%;color:#000;}
+.m2{position:fixed;right:0.5%; width:auto;height:100%;top:1%;color:#000;}
+
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #6d4c41;
+            color: white;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="head">
+    <header>
+
+        
+        <h1>💜 Happy Birthday, Mom! ❤️</h1>
+        
+        <audio src="Dolly_Parton_-_I_Will_Always_Love_You.mp3" id="song" loop autoplay></audio>
+        
+        <button id="playImage" class="button">🎵 Play Music</button>
+    </header>
+</div>
+
+
+<marquee class="m1" behavior="scroll" direction="up" scrolldelay="0"> <br>
+    <img src="p1.png" height="22px" width="22px" /><br><br>
+    <img src="p2.png" height="22px" width="22px" /><br><br>
+    <img src="p3.png" height="22px" width="22px" /><br><br>
+    <img src="p4.png" height="22px" width="22px" /><br><br>
+    <img src="p5.png" height="22px" width="22px" /><br><br>
+    <img src="m6.png" height="22px" width="22px" /><br><br>
+    <img src="p6.png" height="22px" width="22px" /><br><br>
+    <img src="p7.png" height="22px" width="22px" /><br><br>
+    <img src="p1.png" height="22px" width="22px" /><br><br>
+    <img src="p2.png" height="22px" width="22px" /><br><br>
+    <img src="p3.png" height="22px" width="22px" /><br><br>
+    <img src="p4.png" height="22px" width="22px" /><br><br>
+    <img src="p5.png" height="22px" width="22px" /><br><br>
+    <img src="m6.png" height="22px" width="22px" /><br><br>
+    <img src="p6.png" height="22px" width="22px" /><br><br>
+    <img src="p7.png" height="22px" width="22px" /><br><br>
+    <img src="p1.png" height="22px" width="22px" /><br><br>
+    <img src="p2.png" height="22px" width="22px" /><br><br>
+    <img src="p3.png" height="22px" width="22px" /><br><br>
+    <img src="p4.png" height="22px" width="22px" /><br><br>
+    <img src="p5.png" height="22px" width="22px" /><br><br>
+    <img src="m6.png" height="22px" width="22px" /><br><br>
+    <img src="p6.png" height="22px" width="22px" /><br><br>
+    <img src="p7.png" height="22px" width="22px" /><br><br>
+    </marquee>
+    <marquee class="m2" behavior="scroll" direction="down" scrolldelay="0"> <br>
+        <img src="p1.png" height="22px" width="22px" /><br><br>
+    <img src="p2.png" height="22px" width="22px" /><br><br>
+    <img src="p3.png" height="22px" width="22px" /><br><br>
+    <img src="p4.png" height="22px" width="22px" /><br><br>
+    <img src="p5.png" height="22px" width="22px" /><br><br>
+    <img src="m6.png" height="22px" width="22px" /><br><br>
+    <img src="p6.png" height="22px" width="22px" /><br><br>
+    <img src="p7.png" height="22px" width="22px" /><br><br>
+    <img src="p1.png" height="22px" width="22px" /><br><br>
+    <img src="p2.png" height="22px" width="22px" /><br><br>
+    <img src="p3.png" height="22px" width="22px" /><br><br>
+    <img src="p4.png" height="22px" width="22px" /><br><br>
+    <img src="p5.png" height="22px" width="22px" /><br><br>
+    <img src="m6.png" height="22px" width="22px" /><br><br>
+    <img src="p6.png" height="22px" width="22px" /><br><br>
+    <img src="p7.png" height="22px" width="22px" /><br><br>
+    <img src="p1.png" height="22px" width="22px" /><br><br>
+    <img src="p2.png" height="22px" width="22px" /><br><br>
+    <img src="p3.png" height="22px" width="22px" /><br><br>
+    <img src="p4.png" height="22px" width="22px" /><br><br>
+    <img src="p5.png" height="22px" width="22px" /><br><br>
+    <img src="m6.png" height="22px" width="22px" /><br><br>
+    <img src="p6.png" height="22px" width="22px" /><br><br>
+    <img src="p7.png" height="22px" width="22px" /><br><br>
+        </marquee>
+
+
+
+
+    <div class="slider">
+        <div class="slides">
+            <div class="slide">
+                <img src="mummy1.png" alt="Magnificent">
+                <h3>Magnificent: A pillar of beauty and strength</h3>
+            </div>
+            <div class="slide">
+                <img src="mummy2.png" alt="Outstanding">
+                <h3>Outstanding: The guiding star in our lives</h3>
+            </div>
+            <div class="slide">
+                <img src="mummy3.png" alt="Tenderhearted">
+                <h3>Tenderhearted: Filled with endless love and care</h3>
+            </div>
+            <div class="slide">
+                <img src="mummy4.png" alt="Heroic" style="--i:1">
+                <h3>Heroic: A true inspiration to everyone</h3>
+            </div>
+            <div class="slide">
+                <img src="mummy5.png" alt="Empathetic">
+                <h3>Empathetic: Always understanding and kind</h3>
+            </div>
+            <div class="slide">
+                <img src="family pic 1.png" alt="Radiant">
+                <h3>Radiant: Lighting up every room with her presence</h3>
+            </div>
+
+            <div class="slide">
+                <img src="bro pic 7.png" alt="Radiant">
+                <h3>Much Love From Princewill And Tehilla</h3>
+            </div>
+
+        </div>
+    </div>
+    <section class="main-section">
+        <img src="wishkn.png" alt="">
+        <h1> Happy Birthday!</h1>
+        <!-- <p>
+            Mom, you are the light of our lives, a source of endless love, warmth, and joy. 
+            On this special day, we celebrate you and all the wonderful memories we've shared. 
+            Your smile lights up every corner of our hearts, and your wisdom guides us every step of the way. 
+            We love you beyond words!
+        </p> -->
+        <center>
+            <div class="wishMessage" style="text-shadow: 1px 1px 3px white, 1px 1px 3px white, -1px -1px 3px white, -1px -1px 3px white;">
+            <p style="text-shadow: 1px 1px 3px black, 1px 1px 3px black, -1px -1px 3px black, -1px -1px 2px black;color:red">
+                🎂Sending you my warm wishes
+            </p>
+            <span style="text-shadow: 1px 1px 3px silver, 1px 1px 3px silver, -1px -1px 3px silver, -1px -1px 3px silver;color:blue">
+              May your Birthday sparkle with laughter, love, 
+              and warmth.🎅
+            </p>
+            <span style="text-shadow: 1px 1px 3px silver, 1px 1px 3px silver, -1px -1px 3px silver, -1px -1px 3px silver;color:#F80980">
+            🔔Mom, you are the light of our lives, a source of endless love, warmth, and joy. 
+            On this special day, we celebrate you and all the wonderful memories we've shared. 🎁
+            </p>
+            <span style="text-shadow: 1px 1px 3px silver, 1px 1px 3px silver, -1px -1px 3px silver, -1px -1px 3px silver;color:#096B12">
+            Have a very very⛄
+            </p><br>
+            <span style="text-shadow: 3px 1px 3px black, 1px 1px 3px black, -1px -1px 3px black, -1px -1px 3px black;color:#ffff00">
+                🎉 wonderful Birthday 💖
+    </section>
+
+
+    <main>
+        <!-- Heartfelt Messages Section -->
+        <section class="messages">
+            <h2 class="section-title">Heartfelt Messages</h2>
+            <ul id="message-list" class="message-list">
+             
+            </ul>
+            <form id="message-form" class="message-form">
+                <input type="text" id="new-message" placeholder="Add your message" required class="input-message">
+                <button type="submit" class="button">Add Message</button>
+            </form>
+        </section>
+
+        <!-- Gift Reveal Section -->
+        <section class="gift">
+            <h2 class="section-title">Your Birthday Gift</h2>
+            <div id="gift-box" class="gift-box">
+                <p>Click to reveal your gift!</p>
+            </div>
+            <div id="gift-reveal" class="gift-reveal" hidden>
+                <img src="gift.jpeg" alt="Gift Image">
+                <p>Your special gift: A day of pampering and love! 💝</p>
+            </div>
+        </section>
+
+        <!-- Fireworks -->
+        <button id="fireworks-btn" class="button fireworks-btn">Click for Fireworks!</button>
+        <canvas id="fireworks-canvas"></canvas>
+    </main>
+
+
+
+    <footer>
+        <p>Made with love from King of Programming Tehilla</p>
+    </footer>
+    <script>
+        const slides = document.querySelector('.slides');
+        let index = 0;
+
+        setInterval(() => {
+            index = (index + 1) % 7; // Total number of slides
+            slides.style.transform = `translateX(-${index * 100}%)`;
+        }, 3000);
+
+
+       // Heartfelt Messages Section - Add New Messages
+const messageForm = document.getElementById("message-form");
+const messageList = document.getElementById("message-list");
+
+// Pre-existing messages
+const messages = [
+    "Happy Birthday to the most amazing mom in the world! ❤️",
+    "You are the light of our lives, Mom! 🎉"
+];
+
+// Display the pre-existing messages
+messages.forEach(message => {
+    const li = document.createElement("li");
+    li.textContent = message;
+    messageList.appendChild(li);
+});
+
+messageForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const newMessage = document.getElementById("new-message").value;
+
+    // Add the new message to the list
+    if (newMessage.trim() !== "") {
+        const li = document.createElement("li");
+        li.textContent = newMessage;
+        messageList.appendChild(li);
+    }
+
+    // Reset the form
+    messageForm.reset();
+});
+
+// Gift Reveal Section - Toggle Visibility
+const giftBox = document.getElementById("gift-box");
+const giftReveal = document.getElementById("gift-reveal");
+
+// Initially hide the gift reveal
+giftReveal.hidden = true;
+
+giftBox.addEventListener("click", () => {
+    // Toggle visibility of the gift box and reveal section
+    giftBox.style.display = "none";
+    giftReveal.hidden = false;
+});
+
+// Fireworks Animation - Trigger Fireworks on Button Click
+const fireworksCanvas = document.getElementById("fireworks-canvas");
+const ctx = fireworksCanvas.getContext("2d");
+
+fireworksCanvas.width = window.innerWidth;
+fireworksCanvas.height = window.innerHeight;
+
+const fireworks = [];
+
+// Create Firework Class
+function Firework(x, y) {
+    this.x = x;
+    this.y = y;
+    this.color = `hsl(${Math.random() * 360}, 100%, 40%)`;
+    this.radius = Math.random() * 5 + 2;
+    this.speed = Math.random() * 5 + 3;
+    this.alpha = 1.0;
+}
+
+// Firework Draw Function
+function drawFireworks() {
+    ctx.clearRect(0, 0, fireworksCanvas.width, fireworksCanvas.height);
+
+    fireworks.forEach((fw, i) => {
+        ctx.beginPath();
+        ctx.arc(fw.x, fw.y, fw.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${fw.color}, ${fw.alpha})`;
+        ctx.fill();
+        fw.y -= fw.speed;
+        fw.alpha -= 0.02;
+        if (fw.alpha <= 0) fireworks.splice(i, 1);
+    });
+    requestAnimationFrame(drawFireworks);
+}
+
+// Fireworks button interactivity
+const fireworksButton = document.getElementById("fireworks-btn");
+
+fireworksButton.addEventListener("click", () => {
+    for (let i = 0; i < 20; i++) {
+        fireworks.push(new Firework(Math.random() * fireworksCanvas.width, fireworksCanvas.height));
+    }
+});
+
+// Start drawing the fireworks
+drawFireworks();
+
+// Fireworks Sound
+const fireworksSound = new Audio("fireworks.mp3"); // Replace with the actual path to your sound file
+
+// Fireworks button interactivity with sound
+fireworksButton.addEventListener("click", () => {
+    // Play the fireworks sound
+    fireworksSound.play();
+
+    for (let i = 0; i < 20; i++) {
+        fireworks.push(new Firework(Math.random() * fireworksCanvas.width, fireworksCanvas.height));
+    }
+});
+
+
+ // Select the image and audio elements
+ const playImage = document.getElementById("playImage");
+ const song = document.getElementById("song");
+ 
+ // Toggle play/pause on image click
+ playImage.addEventListener("click", () => {
+     if (song.paused) {
+         song.play(); // Play the song
+         
+     } 
+ });
+
+
+    </script>
+
+
+
+  
+
+</body>
+</html>
